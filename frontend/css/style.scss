@@ -1,0 +1,17 @@
+$primary: rgb(0, 176, 200);
+$primary-light: rgb(44, 209, 231);
+$primary-dark: rgb(0, 130, 147);
+$primary-background: rgb(255, 250, 250);
+$primary-background-light: rgb(249, 249, 249);
+$primary-background-dark: rgb(239, 239, 239);
+$primary-text: rgb(45, 45, 45);
+$secondary-text: rgb(77, 77, 77);
+
+body {
+    background-color: $primary-background;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    h1 {
+        color: $primary-dark;
+        text-align: center;
+    }
+}
