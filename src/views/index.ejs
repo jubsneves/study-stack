@@ -1,22 +1,15 @@
-<!DOCTYPE html>
-<html lang="en">
+<%- include('includes/head') %>
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Model</title>
-</head>
+    <section>
+        <h1>
+            <%= localVariable %>
+        </h1>
+        <form action="/" method="post">
+            <input type="hidden" name="_csrf" value="<%= csrfToken %>">
+            <label>Cliente name</label>
+            <input type="text" name="client">
+            <button>Submit</button>
+        </form>
+    </section>
 
-<body>
-    <h1>
-        <%= title %>
-    </h1>
-    <form action="/" method="post">
-        <label>Cliente name</label>
-        <input type="text" name="client">
-        <button>Submit</button>
-    </form>
-    <script src="./assets/js/bundle.js"></script>
-</body>
-
-</html>
+    <%- include('includes/footer') %>
