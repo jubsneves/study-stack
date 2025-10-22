@@ -29,6 +29,7 @@ app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 // Serve files like images, CSS, and JS from the 'public' folder
 app.use(express.static("./public"));
+app.use(express.static(path.resolve(__dirname, "frontend")));
 
 // Session and Flash
 const sessionOptions = session({

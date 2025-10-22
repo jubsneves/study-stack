@@ -12,6 +12,7 @@
   background: $color-primary;
   color: $color-white;
   font-size: $small;
+  font-weight: 600;
   padding: $spacing-xs $spacing-md;
   border: none;
   border-radius: $border-radius-md;
@@ -20,7 +21,7 @@
   display: flex;
   align-items: center;
   height: 40px;
-  gap: 0.3em;
+  justify-content: center;
 
   &:hover {
     background: $color-secondary;
@@ -67,14 +68,124 @@ $large: 1.5rem;
 $x-large: 2rem;
 
 //global
+*,
+html,
+body {
+  font-family: "Montserrat", sans-serif;
+}
+
 body {
   background-color: $background-light;
-  font-family: "Montserrat", sans-serif;
   margin: 0;
+}
+
+h1 {
+  color: $color-text-primary;
+  font-size: $large;
+}
+
+.description {
+  color: $color-text-secondary;
+  font-size: $small;
+}
+
+.container {
+  margin: $spacing-container;
+}
+
+//login
+.login, .register {
+  position: relative;
+  height: 100vh;
+  @include linear-gradient(to right, $color-secondary, $color-primary);
+  background-image: url("/assets/images/background.jpg");
+  background-size: cover;
+  background-position: center;
+
+  .glass-effect {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    width: 100%;
+    top: 0;
+    left: 0;
+    height: 100vh;
+    background: rgba(255, 255, 255, 0.2);
+    backdrop-filter: blur(25px);
+  }
+
+  .content {
+    background-color: $color-white;
+    padding: $spacing-lg;
+    border-radius: $border-radius-lg;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    min-width: 50%;
+  }
+
   h1 {
-    color: $color-secondary;
-    font-size: $x-large;
+    margin-bottom: 0;
+  }
+
+  p {
     text-align: center;
+  }
+
+  .form-footer {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: $spacing-sm;
+    margin-top: $spacing-lg;
+
+    a {
+      color: $color-primary;
+      text-decoration: none;
+      font-size: $small;
+      font-weight: 600;
+      cursor: pointer;
+
+      &:hover {
+        color: $color-secondary;
+      }
+    }
+  }
+}
+
+//form
+.form {
+  display: flex;
+  width: 100%;
+  flex-direction: column;
+  gap: 1em;
+  margin-top: $spacing-md;
+
+  .form-group {
+    display: flex;
+    flex-direction: column;
+  }
+
+  label {
+    font-size: $small;
+    margin-bottom: 8px;
+    color: $color-text-secondary;
+    font-weight: 600;
+  }
+
+  .form-control {
+    padding-left: $spacing-md;
+    height: 40px;
+    border-radius: $border-radius-md;
+    border: 0.8px solid $color-text-secondary;
+
+    &::placeholder {
+      font-size: $small;
+    }
   }
 }
 
@@ -143,19 +254,12 @@ body {
   }
 }
 
-.container {
-  margin: $spacing-container;
-}
-
 //index
 .header-content {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
-  h1 {
-    font-size: $x-large;
-  }
 }
 
 .btn-filled {
@@ -177,6 +281,8 @@ body {
     h1 {
       margin: $spacing-container;
       margin: 0;
+      text-align: center;
+      color: $color-primary;
     }
   }
   img {

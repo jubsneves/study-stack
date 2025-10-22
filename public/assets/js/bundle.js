@@ -25247,20 +25247,122 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _node_modules_css_loader_dist_runtime_sourceMaps_js__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_node_modules_css_loader_dist_runtime_sourceMaps_js__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../node_modules/css-loader/dist/runtime/api.js */ "./node_modules/css-loader/dist/runtime/api.js");
 /* harmony import */ var _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var _node_modules_css_loader_dist_runtime_getUrl_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../node_modules/css-loader/dist/runtime/getUrl.js */ "./node_modules/css-loader/dist/runtime/getUrl.js");
+/* harmony import */ var _node_modules_css_loader_dist_runtime_getUrl_js__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(_node_modules_css_loader_dist_runtime_getUrl_js__WEBPACK_IMPORTED_MODULE_2__);
 // Imports
 
 
+
+var ___CSS_LOADER_URL_IMPORT_0___ = new URL(/* asset import */ Object(function webpackMissingModule() { var e = new Error("Cannot find module '/assets/images/background.jpg'"); e.code = 'MODULE_NOT_FOUND'; throw e; }()), __webpack_require__.b);
 var ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_1___default()((_node_modules_css_loader_dist_runtime_sourceMaps_js__WEBPACK_IMPORTED_MODULE_0___default()));
+var ___CSS_LOADER_URL_REPLACEMENT_0___ = _node_modules_css_loader_dist_runtime_getUrl_js__WEBPACK_IMPORTED_MODULE_2___default()(___CSS_LOADER_URL_IMPORT_0___);
 // Module
-___CSS_LOADER_EXPORT___.push([module.id, `body {
-  background-color: #f5f5f5;
+___CSS_LOADER_EXPORT___.push([module.id, `*,
+html,
+body {
   font-family: "Montserrat", sans-serif;
+}
+
+body {
+  background-color: #f5f5f5;
   margin: 0;
 }
-body h1 {
-  color: #0040a6;
-  font-size: 2rem;
+
+h1 {
+  color: #000000;
+  font-size: 1.5rem;
+}
+
+.description {
+  color: #45476e;
+  font-size: 0.875rem;
+}
+
+.container {
+  margin: 4rem;
+}
+
+.login, .register {
+  position: relative;
+  height: 100vh;
+  background: linear-gradient(to right, #0040a6, #0061fe);
+  background-image: url(${___CSS_LOADER_URL_REPLACEMENT_0___});
+  background-size: cover;
+  background-position: center;
+}
+.login .glass-effect, .register .glass-effect {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  width: 100%;
+  top: 0;
+  left: 0;
+  height: 100vh;
+  background: rgba(255, 255, 255, 0.2);
+  backdrop-filter: blur(25px);
+}
+.login .content, .register .content {
+  background-color: #ffffff;
+  padding: 2rem;
+  border-radius: 16px;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  min-width: 50%;
+}
+.login h1, .register h1 {
+  margin-bottom: 0;
+}
+.login p, .register p {
   text-align: center;
+}
+.login .form-footer, .register .form-footer {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  gap: 0.5rem;
+  margin-top: 2rem;
+}
+.login .form-footer a, .register .form-footer a {
+  color: #0061fe;
+  text-decoration: none;
+  font-size: 0.875rem;
+  font-weight: 600;
+  cursor: pointer;
+}
+.login .form-footer a:hover, .register .form-footer a:hover {
+  color: #0040a6;
+}
+
+.form {
+  display: flex;
+  width: 100%;
+  flex-direction: column;
+  gap: 1em;
+  margin-top: 1rem;
+}
+.form .form-group {
+  display: flex;
+  flex-direction: column;
+}
+.form label {
+  font-size: 0.875rem;
+  margin-bottom: 8px;
+  color: #45476e;
+  font-weight: 600;
+}
+.form .form-control {
+  padding-left: 1rem;
+  height: 40px;
+  border-radius: 8px;
+  border: 0.8px solid #45476e;
+}
+.form .form-control::placeholder {
+  font-size: 0.875rem;
 }
 
 .navbar {
@@ -25321,24 +25423,18 @@ body h1 {
   background: #0040a6;
 }
 
-.container {
-  margin: 4rem;
-}
-
 .header-content {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
 }
-.header-content h1 {
-  font-size: 2rem;
-}
 
 .btn-filled {
   background: #0061fe;
   color: #ffffff;
   font-size: 0.875rem;
+  font-weight: 600;
   padding: 0.25rem 1rem;
   border: none;
   border-radius: 8px;
@@ -25347,7 +25443,7 @@ body h1 {
   display: flex;
   align-items: center;
   height: 40px;
-  gap: 0.3em;
+  justify-content: center;
 }
 .btn-filled:hover {
   background: #0040a6;
@@ -25374,6 +25470,8 @@ body h1 {
 .error-page .error-msg h1 {
   margin: 4rem;
   margin: 0;
+  text-align: center;
+  color: #0061fe;
 }
 .error-page img {
   display: block;
@@ -25448,7 +25546,7 @@ body h1 {
 }
 
 /*# sourceMappingURL=style.css.map */
-`, "",{"version":3,"sources":["webpack://./frontend/scss/style.scss","webpack://./frontend/css/style.css"],"names":[],"mappings":"AAqEA;EACE,yBA/BiB;EAgCjB,qCAAA;EACA,SAAA;ACpEF;ADqEE;EACE,cApCc;EAqCd,eATM;EAUN,kBAAA;ACnEJ;;ADwEA;EACE,aAAA;EACA,mBAAA;EACA,8BAAA;EACA,aAlCW;EA5CX,uDAAA;EANA,wCAAA;EACA,gDAAA;EACA,6CAAA;ACiBF;ADqEE;EACE,kBA1BK;EA2BL,iBAAA;EACA,cAnDU;EAoDV,qBAAA;EACA,aAAA;EACA,mBAAA;EACA,YA/CS;ACpBb;ADsEE;EACE,aAAA;EACA,gBAAA;EACA,YAAA;EACA,eAAA;ACpEJ;ADsEI;EACE,cAAA;EACA,aAAA;EACA,yBAtEY;EAuEZ,eA3DO;EA4DP,kBArDa;ACfnB;ADwEE;EACE,aAAA;EACA,mBAAA;ACtEJ;ADwEI;EACE,aAAA;EACA,gBAAA;EACA,UAAA;EACA,SAAA;ACtEN;ADwEM;EACE,iBA1EK;ACIb;ADwEQ;EACE,qBAAA;EACA,cAxFI;EAyFJ,mBA7FM;EA8FN,mBArEF;EAsEE,oBAAA;EACA,kBA5ES;EA6ET,2BAAA;ACtEV;ADwEU;EACE,mBAnGM;AC6BlB;;AD8EA;EACE,YA7FkB;ACkBpB;;AD+EA;EACE,aAAA;EACA,mBAAA;EACA,8BAAA;EACA,mBAAA;AC5EF;AD6EE;EACE,eA1FM;ACeV;;AD+EA;EArJE,mBA0Bc;EAzBd,cA6BY;EA5BZ,mBAiDM;EAhDN,qBAAA;EACA,YAAA;EACA,kBAyCiB;EAxCjB,eAAA;EACA,yBAAA;EACA,aAAA;EACA,mBAAA;EACA,YAAA;EACA,UAAA;AC0EF;ADxEE;EACE,mBAac;EAZd,2BAAA;AC0EJ;ADzEI;EACE,wBAAA;EACA,yBAAA;AC2EN;;AD6DA;EACE,SAAA;AC1DF;AD2DE;EACE,gBAnHgB;AC0DpB;AD0DI;EACE,cAAA;EACA,iBAAA;EACA,kBA5GG;EA6GH,kBAAA;EACA,qBA5HO;ACoEb;AD0DI;EACE,YA5Hc;EA6Hd,SAAA;ACxDN;AD2DE;EACE,cAAA;EACA,eAAA;EACA,YAAA;ACzDJ;;AD8DA;EACE,mBAhJiB;EAiJjB,cAlJY;EAmJZ,aA7IW;EA8IX,kBAxIiB;EAyIjB,gBAAA;AC3DF;;AD+DA;EACE,WAAA;EACA,yBAAA;EACA,yBAAA;EACA,gBAvJW;AC2Fb;AD8DE;;EAEE,aA3JS;EA4JT,mBAjJI;EAkJJ,gBAAA;AC5DJ;AD+DI;EACE,yBA3KQ;AC8Gd;AD+DM;EACE,2BA9JW;EA+JX,8BA/JW;ACkGnB;AD+DM;EACE,4BAlKW;EAmKX,+BAnKW;ACsGnB;AD+DM;EACE,yBAvLU;AC0HlB;;ADoEA;EACE,mBA/LgB;EAgMhB,kBAAA;EACA,aArLW;ACoHb;;ADsEA;EACE;IACE,eAAA;ECnEF;EDqEE;IACE,cAAA;ECnEJ;EDsEE;IACE,WAAA;IACA,sBAAA;IACA,aAAA;IACA,yBAjNQ;IAkNR,aAxMO;ECoIX;EDsEI;IACE,aAAA;ECpEN;EDuEI;IACE,sBAAA;ECrEN;EDuEM;IACE,gBAAA;ECrER;AACF;;AAEA,oCAAoC","sourceRoot":""}]);
+`, "",{"version":3,"sources":["webpack://./frontend/scss/style.scss","webpack://./frontend/css/style.css"],"names":[],"mappings":"AAsEA;;;EAGE,qCAAA;ACrEF;;ADwEA;EACE,yBArCiB;EAsCjB,SAAA;ACrEF;;ADwEA;EACE,cA9CmB;EA+CnB,iBAjBM;ACpDR;;ADwEA;EACE,cAlDqB;EAmDrB,mBAzBM;AC5CR;;ADwEA;EACE,YAtCkB;AC/BpB;;ADyEA;EACE,kBAAA;EACA,aAAA;EA3FA,uDAAA;EA6FA,yDAAA;EACA,sBAAA;EACA,2BAAA;ACtEF;ADwEE;EACE,aAAA;EACA,sBAAA;EACA,mBAAA;EACA,uBAAA;EACA,kBAAA;EACA,WAAA;EACA,MAAA;EACA,OAAA;EACA,aAAA;EACA,oCAAA;EACA,2BAAA;ACtEJ;ADyEE;EACE,yBA7EU;EA8EV,aAnES;EAoET,mBA9De;EA+Df,aAAA;EACA,uBAAA;EACA,sBAAA;EACA,mBAAA;EACA,cAAA;ACvEJ;AD0EE;EACE,gBAAA;ACxEJ;AD2EE;EACE,kBAAA;ACzEJ;AD4EE;EACE,aAAA;EACA,mBAAA;EACA,uBAAA;EACA,mBAAA;EACA,WA3FS;EA4FT,gBA1FS;ACgBb;AD4EI;EACE,cA5GU;EA6GV,qBAAA;EACA,mBArFE;EAsFF,gBAAA;EACA,eAAA;AC1EN;AD4EM;EACE,cAlHU;ACwClB;;ADiFA;EACE,aAAA;EACA,WAAA;EACA,sBAAA;EACA,QAAA;EACA,gBAjHW;ACmCb;ADgFE;EACE,aAAA;EACA,sBAAA;AC9EJ;ADiFE;EACE,mBA9GI;EA+GJ,kBAAA;EACA,cA1ImB;EA2InB,gBAAA;AC/EJ;ADkFE;EACE,kBAhIS;EAiIT,YAAA;EACA,kBA5He;EA6Hf,2BAAA;AChFJ;ADkFI;EACE,mBA3HE;AC2CR;;ADsFA;EACE,aAAA;EACA,mBAAA;EACA,8BAAA;EACA,aAhJW;EA7CX,uDAAA;EANA,wCAAA;EACA,gDAAA;EACA,6CAAA;ACkHF;ADmFE;EACE,kBAxIK;EAyIL,iBAAA;EACA,cAjKU;EAkKV,qBAAA;EACA,aAAA;EACA,mBAAA;EACA,YA7JS;AC4Eb;ADoFE;EACE,aAAA;EACA,gBAAA;EACA,YAAA;EACA,eAAA;AClFJ;ADoFI;EACE,cAAA;EACA,aAAA;EACA,yBApLY;EAqLZ,eAzKO;EA0KP,kBAnKa;ACiFnB;ADsFE;EACE,aAAA;EACA,mBAAA;ACpFJ;ADsFI;EACE,aAAA;EACA,gBAAA;EACA,UAAA;EACA,SAAA;ACpFN;ADsFM;EACE,iBAxLK;ACoGb;ADsFQ;EACE,qBAAA;EACA,cAtMI;EAuMJ,mBA3MM;EA4MN,mBAnLF;EAoLE,oBAAA;EACA,kBA1LS;EA2LT,2BAAA;ACpFV;ADsFU;EACE,mBAjNM;AC6HlB;;AD6FA;EACE,aAAA;EACA,mBAAA;EACA,8BAAA;EACA,mBAAA;AC1FF;;AD6FA;EA7PE,mBA2Bc;EA1Bd,cA8BY;EA7BZ,mBAkDM;EAjDN,gBAAA;EACA,qBAAA;EACA,YAAA;EACA,kBAyCiB;EAxCjB,eAAA;EACA,yBAAA;EACA,aAAA;EACA,mBAAA;EACA,YAAA;EACA,uBAAA;ACoKF;ADlKE;EACE,mBAac;EAZd,2BAAA;ACoKJ;ADnKI;EACE,wBAAA;EACA,yBAAA;ACqKN;;AD0EA;EACE,SAAA;ACvEF;ADwEE;EACE,gBA1NgB;ACoJpB;ADuEI;EACE,cAAA;EACA,iBAAA;EACA,kBAnNG;EAoNH,kBAAA;EACA,qBAnOO;AC8Jb;ADuEI;EACE,YAnOc;EAoOd,SAAA;EACA,kBAAA;EACA,cAtPU;ACiLhB;ADwEE;EACE,cAAA;EACA,eAAA;EACA,YAAA;ACtEJ;;AD2EA;EACE,mBAzPiB;EA0PjB,cA3PY;EA4PZ,aAtPW;EAuPX,kBAjPiB;EAkPjB,gBAAA;ACxEF;;AD4EA;EACE,WAAA;EACA,yBAAA;EACA,yBAAA;EACA,gBAhQW;ACuLb;AD2EE;;EAEE,aApQS;EAqQT,mBA1PI;EA2PJ,gBAAA;ACzEJ;AD4EI;EACE,yBApRQ;AC0Md;AD4EM;EACE,2BAvQW;EAwQX,8BAxQW;AC8LnB;AD4EM;EACE,4BA3QW;EA4QX,+BA5QW;ACkMnB;AD4EM;EACE,yBAhSU;ACsNlB;;ADiFA;EACE,mBAxSgB;EAyShB,kBAAA;EACA,aA9RW;ACgNb;;ADmFA;EACE;IACE,eAAA;EChFF;EDkFE;IACE,cAAA;EChFJ;EDmFE;IACE,WAAA;IACA,sBAAA;IACA,aAAA;IACA,yBA1TQ;IA2TR,aAjTO;ECgOX;EDmFI;IACE,aAAA;ECjFN;EDoFI;IACE,sBAAA;EClFN;EDoFM;IACE,gBAAA;EClFR;AACF;;AAEA,oCAAoC","sourceRoot":""}]);
 // Exports
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
 
@@ -25546,6 +25644,42 @@ module.exports = function (cssWithMappingToString) {
     }
   };
   return list;
+};
+
+/***/ }),
+
+/***/ "./node_modules/css-loader/dist/runtime/getUrl.js":
+/*!********************************************************!*\
+  !*** ./node_modules/css-loader/dist/runtime/getUrl.js ***!
+  \********************************************************/
+/***/ ((module) => {
+
+"use strict";
+
+
+module.exports = function (url, options) {
+  if (!options) {
+    options = {};
+  }
+  if (!url) {
+    return url;
+  }
+  url = String(url.__esModule ? url.default : url);
+
+  // If url is already wrapped in quotes, remove them
+  if (/^['"].*['"]$/.test(url)) {
+    url = url.slice(1, -1);
+  }
+  if (options.hash) {
+    url += options.hash;
+  }
+
+  // Should url be wrapped?
+  // See https://drafts.csswg.org/css-values-3/#urls
+  if (/["'() \t\n]|(%20)/.test(url) || options.needQuotes) {
+    return "\"".concat(url.replace(/"/g, '\\"').replace(/\n/g, "\\n"), "\"");
+  }
+  return url;
 };
 
 /***/ }),
@@ -26646,6 +26780,9 @@ module.exports = styleTagTransform;
 /******/ 		return module.exports;
 /******/ 	}
 /******/ 	
+/******/ 	// expose the modules object (__webpack_modules__)
+/******/ 	__webpack_require__.m = __webpack_modules__;
+/******/ 	
 /************************************************************************/
 /******/ 	/* webpack/runtime/compat get default export */
 /******/ 	(() => {
@@ -26699,6 +26836,32 @@ module.exports = styleTagTransform;
 /******/ 		};
 /******/ 	})();
 /******/ 	
+/******/ 	/* webpack/runtime/jsonp chunk loading */
+/******/ 	(() => {
+/******/ 		__webpack_require__.b = (typeof document !== 'undefined' && document.baseURI) || self.location.href;
+/******/ 		
+/******/ 		// object to store loaded and loading chunks
+/******/ 		// undefined = chunk not loaded, null = chunk preloaded/prefetched
+/******/ 		// [resolve, reject, Promise] = chunk loading, 0 = chunk loaded
+/******/ 		var installedChunks = {
+/******/ 			"main": 0
+/******/ 		};
+/******/ 		
+/******/ 		// no chunk on demand loading
+/******/ 		
+/******/ 		// no prefetching
+/******/ 		
+/******/ 		// no preloaded
+/******/ 		
+/******/ 		// no HMR
+/******/ 		
+/******/ 		// no HMR manifest
+/******/ 		
+/******/ 		// no on chunks loaded
+/******/ 		
+/******/ 		// no jsonp function
+/******/ 	})();
+/******/ 	
 /******/ 	/* webpack/runtime/nonce */
 /******/ 	(() => {
 /******/ 		__webpack_require__.nc = undefined;
@@ -26713,11 +26876,11 @@ var __webpack_exports__ = {};
   !*** ./frontend/main.js ***!
   \**************************/
 __webpack_require__.r(__webpack_exports__);
-/* harmony import */ var core_js_stable__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! core-js/stable */ "./node_modules/core-js/stable/index.js");
-/* harmony import */ var core_js_stable__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(core_js_stable__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var regenerator_runtime_runtime__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! regenerator-runtime/runtime */ "./node_modules/regenerator-runtime/runtime.js");
-/* harmony import */ var regenerator_runtime_runtime__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(regenerator_runtime_runtime__WEBPACK_IMPORTED_MODULE_1__);
-/* harmony import */ var _css_style_css__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./css/style.css */ "./frontend/css/style.css");
+/* harmony import */ var _css_style_css__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./css/style.css */ "./frontend/css/style.css");
+/* harmony import */ var core_js_stable__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! core-js/stable */ "./node_modules/core-js/stable/index.js");
+/* harmony import */ var core_js_stable__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(core_js_stable__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var regenerator_runtime_runtime__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! regenerator-runtime/runtime */ "./node_modules/regenerator-runtime/runtime.js");
+/* harmony import */ var regenerator_runtime_runtime__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(regenerator_runtime_runtime__WEBPACK_IMPORTED_MODULE_2__);
 
 
 

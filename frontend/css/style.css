@@ -1,12 +1,109 @@
+*,
+html,
+body {
+  font-family: "Montserrat", sans-serif;
+}
+
 body {
   background-color: #f5f5f5;
-  font-family: "Montserrat", sans-serif;
   margin: 0;
 }
-body h1 {
-  color: #0040a6;
-  font-size: 2rem;
+
+h1 {
+  color: #000000;
+  font-size: 1.5rem;
+}
+
+.description {
+  color: #45476e;
+  font-size: 0.875rem;
+}
+
+.container {
+  margin: 4rem;
+}
+
+.login, .register {
+  position: relative;
+  height: 100vh;
+  background: linear-gradient(to right, #0040a6, #0061fe);
+  background-image: url("/assets/images/background.jpg");
+  background-size: cover;
+  background-position: center;
+}
+.login .glass-effect, .register .glass-effect {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  width: 100%;
+  top: 0;
+  left: 0;
+  height: 100vh;
+  background: rgba(255, 255, 255, 0.2);
+  backdrop-filter: blur(25px);
+}
+.login .content, .register .content {
+  background-color: #ffffff;
+  padding: 2rem;
+  border-radius: 16px;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  min-width: 50%;
+}
+.login h1, .register h1 {
+  margin-bottom: 0;
+}
+.login p, .register p {
   text-align: center;
+}
+.login .form-footer, .register .form-footer {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  gap: 0.5rem;
+  margin-top: 2rem;
+}
+.login .form-footer a, .register .form-footer a {
+  color: #0061fe;
+  text-decoration: none;
+  font-size: 0.875rem;
+  font-weight: 600;
+  cursor: pointer;
+}
+.login .form-footer a:hover, .register .form-footer a:hover {
+  color: #0040a6;
+}
+
+.form {
+  display: flex;
+  width: 100%;
+  flex-direction: column;
+  gap: 1em;
+  margin-top: 1rem;
+}
+.form .form-group {
+  display: flex;
+  flex-direction: column;
+}
+.form label {
+  font-size: 0.875rem;
+  margin-bottom: 8px;
+  color: #45476e;
+  font-weight: 600;
+}
+.form .form-control {
+  padding-left: 1rem;
+  height: 40px;
+  border-radius: 8px;
+  border: 0.8px solid #45476e;
+}
+.form .form-control::placeholder {
+  font-size: 0.875rem;
 }
 
 .navbar {
@@ -67,24 +164,18 @@ body h1 {
   background: #0040a6;
 }
 
-.container {
-  margin: 4rem;
-}
-
 .header-content {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
 }
-.header-content h1 {
-  font-size: 2rem;
-}
 
 .btn-filled {
   background: #0061fe;
   color: #ffffff;
   font-size: 0.875rem;
+  font-weight: 600;
   padding: 0.25rem 1rem;
   border: none;
   border-radius: 8px;
@@ -93,7 +184,7 @@ body h1 {
   display: flex;
   align-items: center;
   height: 40px;
-  gap: 0.3em;
+  justify-content: center;
 }
 .btn-filled:hover {
   background: #0040a6;
@@ -120,6 +211,8 @@ body h1 {
 .error-page .error-msg h1 {
   margin: 4rem;
   margin: 0;
+  text-align: center;
+  color: #0061fe;
 }
 .error-page img {
   display: block;
