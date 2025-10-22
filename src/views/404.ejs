@@ -1,16 +1,12 @@
-<!DOCTYPE html>
-<html lang="en">
+<%- include('includes/head') %>
+    <%- include('includes/navbar') %>
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
+        <section class="error-page">
+            <div class="error-msg">
+                <span>Ops...</span>
+                <h1>Page not found</h1>
+            </div>
+            <img src="/assets/images/404.svg" alt="Error 404 image">
+        </section>
 
-<body>
-    <section>
-        <img src="/assets/images/404.svg" alt="Error 404 image">
-    </section>
-</body>
-
-</html>
+        <%- include('includes/footer') %>
