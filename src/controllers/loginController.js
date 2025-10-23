@@ -3,6 +3,5 @@ exports.index = (req, res) => {
 };
 
 exports.loginUser = (req, res) => {
-    console.log(req.body);
-    res.send("Logged In");
+    res.send(req.body);
 };

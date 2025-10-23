@@ -22,7 +22,18 @@ const {
   csrfMiddleware,
 } = require("./src/middlewares/middleware");
 
-app.use(helmet());
+// app.use(helmet());
+app.use(
+  helmet.contentSecurityPolicy({
+    directives: {
+      defaultSrc: ["'self'"],
+      fontSrc: ["'self'", "https://fonts.gstatic.com"],
+      styleSrc: ["'self'", "'unsafe-inline'", "https://fonts.googleapis.com"],
+      scriptSrc: ["'self'"],
+      imgSrc: ["'self'"],
+    },
+  })
+);
 //urlencoded: Handle form data submitted by users
 app.use(express.urlencoded({ extended: true }));
 //express.json: Handle data sent in JSON format

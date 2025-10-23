@@ -54,6 +54,17 @@ var update = _node_modules_style_loader_dist_runtime_injectStylesIntoStyleTag_js
 
 /***/ }),
 
+/***/ "./frontend/images/background.jpg":
+/*!****************************************!*\
+  !*** ./frontend/images/background.jpg ***!
+  \****************************************/
+/***/ ((module, __unused_webpack_exports, __webpack_require__) => {
+
+"use strict";
+module.exports = __webpack_require__.p + "47496e94113bc0128ceb.jpg";
+
+/***/ }),
+
 /***/ "./node_modules/core-js/internals/a-callable.js":
 /*!******************************************************!*\
   !*** ./node_modules/core-js/internals/a-callable.js ***!
@@ -25253,7 +25264,7 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
-var ___CSS_LOADER_URL_IMPORT_0___ = new URL(/* asset import */ Object(function webpackMissingModule() { var e = new Error("Cannot find module '/assets/images/background.jpg'"); e.code = 'MODULE_NOT_FOUND'; throw e; }()), __webpack_require__.b);
+var ___CSS_LOADER_URL_IMPORT_0___ = new URL(/* asset import */ __webpack_require__(/*! ../images/background.jpg */ "./frontend/images/background.jpg"), __webpack_require__.b);
 var ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_1___default()((_node_modules_css_loader_dist_runtime_sourceMaps_js__WEBPACK_IMPORTED_MODULE_0___default()));
 var ___CSS_LOADER_URL_REPLACEMENT_0___ = _node_modules_css_loader_dist_runtime_getUrl_js__WEBPACK_IMPORTED_MODULE_2___default()(___CSS_LOADER_URL_IMPORT_0___);
 // Module
@@ -25282,7 +25293,8 @@ h1 {
   margin: 4rem;
 }
 
-.login, .register {
+.login,
+.register {
   position: relative;
   height: 100vh;
   background: linear-gradient(to right, #0040a6, #0061fe);
@@ -25290,7 +25302,8 @@ h1 {
   background-size: cover;
   background-position: center;
 }
-.login .glass-effect, .register .glass-effect {
+.login .glass-effect,
+.register .glass-effect {
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -25303,7 +25316,8 @@ h1 {
   background: rgba(255, 255, 255, 0.2);
   backdrop-filter: blur(25px);
 }
-.login .content, .register .content {
+.login .content,
+.register .content {
   background-color: #ffffff;
   padding: 2rem;
   border-radius: 16px;
@@ -25313,13 +25327,16 @@ h1 {
   align-items: center;
   min-width: 50%;
 }
-.login h1, .register h1 {
+.login h1,
+.register h1 {
   margin-bottom: 0;
 }
-.login p, .register p {
+.login p,
+.register p {
   text-align: center;
 }
-.login .form-footer, .register .form-footer {
+.login .form-footer,
+.register .form-footer {
   display: flex;
   flex-direction: row;
   justify-content: center;
@@ -25327,14 +25344,16 @@ h1 {
   gap: 0.5rem;
   margin-top: 2rem;
 }
-.login .form-footer a, .register .form-footer a {
+.login .form-footer a,
+.register .form-footer a {
   color: #0061fe;
   text-decoration: none;
   font-size: 0.875rem;
   font-weight: 600;
   cursor: pointer;
 }
-.login .form-footer a:hover, .register .form-footer a:hover {
+.login .form-footer a:hover,
+.register .form-footer a:hover {
   color: #0040a6;
 }
 
@@ -25480,11 +25499,25 @@ h1 {
 }
 
 .alert {
-  background: #ffdddd;
   color: #6f0000;
-  padding: 1rem;
-  border-radius: 8px;
   font-weight: 500;
+  font-size: 0.875rem;
+  line-height: 1.8em;
+  border-radius: 16px;
+}
+.alert .alert__error {
+  padding: 1rem;
+  color: #6f0000;
+  background: #ffdddd;
+}
+.alert .alert__success {
+  padding: 1rem;
+  color: #146f00;
+  background: #deffdd;
+}
+.alert ul {
+  padding-left: 0.5rem;
+  margin: 0;
 }
 
 .table {
@@ -25546,7 +25579,7 @@ h1 {
 }
 
 /*# sourceMappingURL=style.css.map */
-`, "",{"version":3,"sources":["webpack://./frontend/scss/style.scss","webpack://./frontend/css/style.css"],"names":[],"mappings":"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","sourceRoot":""}]);
+`, "",{"version":3,"sources":["webpack://./frontend/scss/style.scss","webpack://./frontend/css/style.css"],"names":[],"mappings":"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","sourceRoot":""}]);
 // Exports
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
 
@@ -26834,6 +26867,29 @@ module.exports = styleTagTransform;
 /******/ 			}
 /******/ 			Object.defineProperty(exports, '__esModule', { value: true });
 /******/ 		};
+/******/ 	})();
+/******/ 	
+/******/ 	/* webpack/runtime/publicPath */
+/******/ 	(() => {
+/******/ 		var scriptUrl;
+/******/ 		if (__webpack_require__.g.importScripts) scriptUrl = __webpack_require__.g.location + "";
+/******/ 		var document = __webpack_require__.g.document;
+/******/ 		if (!scriptUrl && document) {
+/******/ 			if (document.currentScript && document.currentScript.tagName.toUpperCase() === 'SCRIPT')
+/******/ 				scriptUrl = document.currentScript.src;
+/******/ 			if (!scriptUrl) {
+/******/ 				var scripts = document.getElementsByTagName("script");
+/******/ 				if(scripts.length) {
+/******/ 					var i = scripts.length - 1;
+/******/ 					while (i > -1 && (!scriptUrl || !/^http(s?):/.test(scriptUrl))) scriptUrl = scripts[i--].src;
+/******/ 				}
+/******/ 			}
+/******/ 		}
+/******/ 		// When supporting browsers where an automatic publicPath is not supported you must specify an output.publicPath manually via configuration
+/******/ 		// or pass an empty string ("") and set the __webpack_public_path__ variable from your code to use your own logic.
+/******/ 		if (!scriptUrl) throw new Error("Automatic publicPath is not supported in this browser");
+/******/ 		scriptUrl = scriptUrl.replace(/^blob:/, "").replace(/#.*$/, "").replace(/\?.*$/, "").replace(/\/[^\/]+$/, "/");
+/******/ 		__webpack_require__.p = scriptUrl;
 /******/ 	})();
 /******/ 	
 /******/ 	/* webpack/runtime/jsonp chunk loading */

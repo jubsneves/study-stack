@@ -46,6 +46,8 @@ $color-divider: #d1d1d1;
 //Colour - Alerts
 $color-error: #6f0000;
 $background-error: #ffdddd;
+$color-success: #146f00;
+$background-success: #deffdd;
 
 //Spacing
 $spacing-xs: 0.25rem;
@@ -93,12 +95,13 @@ h1 {
   margin: $spacing-container;
 }
 
-//login
-.login, .register {
+//login & register
+.login,
+.register {
   position: relative;
   height: 100vh;
   @include linear-gradient(to right, $color-secondary, $color-primary);
-  background-image: url("/assets/images/background.jpg");
+  background-image: url("../images/background.jpg");
   background-size: cover;
   background-position: center;
 
@@ -294,11 +297,29 @@ h1 {
 
 //error messages
 .alert {
-  background: $background-error;
+  // background: $background-error;
   color: $color-error;
-  padding: $spacing-md;
-  border-radius: $border-radius-md;
   font-weight: 500;
+  font-size: $small;
+  line-height: 1.8em;
+  border-radius: $border-radius-lg;
+
+  .alert__error {
+    padding: $spacing-md;
+    color: $color-error;
+    background: $background-error;
+  }
+
+  .alert__success {
+    padding: $spacing-md;
+    color: $color-success;
+    background: $background-success;
+  }
+
+  ul {
+    padding-left: $spacing-sm;
+    margin: 0;
+  }
 }
 
 //Table
