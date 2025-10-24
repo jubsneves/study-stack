@@ -37,6 +37,8 @@
 //Colours
 $color-text-primary: #000000;
 $color-text-secondary: #45476e;
+$color-text-tertiary: #9495b1;
+$color-border: #8a8caa;
 $color-primary: #0061fe;
 $color-secondary: #0040a6;
 $background-primary-light: #e7eefa;
@@ -183,14 +185,19 @@ h1 {
     font-weight: 600;
   }
 
-  .form-control {
+  .form-control, input, select {
     padding-left: $spacing-md;
     height: 40px;
     border-radius: $border-radius-md;
-    border: 0.8px solid $color-text-secondary;
+    border: 1px solid $color-border;
 
     &::placeholder {
       font-size: $small;
+      color: $color-text-tertiary;
+    }
+
+    &:hover {
+      border: 1px solid $color-primary;
     }
   }
 }
