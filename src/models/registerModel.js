@@ -1,12 +1,13 @@
 const mongoose = require("mongoose");
 const validator = require("validator");
+const bcryptjs = require("bcryptjs");
 
 const RegisterSchema = new mongoose.Schema({
   email: { type: String, required: true },
   password: { type: String, required: true },
 });
 
-const RegisterModel = mongoose.model("Register", RegisterSchema);
+const RegisterModel = mongoose.models.Register || mongoose.model("Register", RegisterSchema);
 
 class Register {
   constructor(body) {
@@ -19,11 +20,18 @@ class Register {
     this.validate();
     if (this.errors.length > 0) return;
 
-    try {
-      this.user = await RegisterModel.create(this.body);
-    } catch (e) {
-      console.log(e);
-    }
+    await this.userExists();
+    if (this.errors.length > 0) return;
+
+    const salt = bcryptjs.genSaltSync();
+    this.body.password = bcryptjs.hashSync(this.body.password, salt);
+
+    this.user = await RegisterModel.create(this.body);
+  }
+
+  async userExists() {
+    const user = await RegisterModel.findOne({ email: this.body.email });
+    if (user) this.errors.push("An account with this email already exist. ");
   }
 
   validate() {

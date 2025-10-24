@@ -16,5 +16,6 @@ route.post("/login", loginController.loginUser);
 route.get('/register', registerController.index);
 route.post('/register', registerController.registerUser);
 
+route.get("/logout", loginController.logout);
 
 module.exports = route;
