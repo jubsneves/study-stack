@@ -143,6 +143,7 @@ h1 {
     text-align: center;
   }
 
+  //form
   .form-footer {
     display: flex;
     flex-direction: row;
@@ -165,7 +166,6 @@ h1 {
   }
 }
 
-//form
 .form {
   display: flex;
   width: 100%;
@@ -178,6 +178,11 @@ h1 {
     flex-direction: column;
   }
 
+  .error-message {
+    background-color: $background-error;
+    border-color: $color-error;
+  }
+
   label {
     font-size: $small;
     margin-bottom: 8px;
@@ -185,7 +190,9 @@ h1 {
     font-weight: 600;
   }
 
-  .form-control, input, select {
+  .form-control,
+  input,
+  select {
     padding-left: $spacing-md;
     height: 40px;
     border-radius: $border-radius-md;

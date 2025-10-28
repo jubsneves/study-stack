@@ -24,5 +24,7 @@ route.get("/logout", loginController.logout);
 //Adding students
 route.get("/students", loginRequired, studentsController.index);
 route.post("/addstudent", loginRequired, studentsController.addstudent);
+route.get("/student/index/:id", loginRequired, studentsController.editIndex);
+route.post("/student/edit/:id", loginRequired, studentsController.edit);
 
 module.exports = route;
