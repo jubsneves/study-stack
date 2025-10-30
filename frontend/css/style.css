@@ -20,7 +20,7 @@ h1 {
 }
 
 .container {
-  margin: 4rem;
+  margin: 2rem;
 }
 
 .login,
@@ -132,7 +132,7 @@ h1 {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 1rem 4rem;
+  padding: 1rem 2rem;
   position: sticky;
   box-sizing: border-box;
   z-index: 100;
@@ -229,7 +229,7 @@ h1 {
   margin: 0;
 }
 .error-page .error-msg {
-  margin-top: 4rem;
+  margin-top: 2rem;
 }
 .error-page .error-msg span {
   display: block;
@@ -239,7 +239,7 @@ h1 {
   margin-bottom: 0.5rem;
 }
 .error-page .error-msg h1 {
-  margin: 4rem;
+  margin: 2rem;
   margin: 0;
   text-align: center;
   color: #0061fe;
@@ -297,6 +297,31 @@ h1 {
 }
 .table tbody tr:hover {
   background-color: #e7eefa;
+}
+.table tbody span .course {
+  padding: 20px !important;
+  height: 100px;
+}
+.table .actions {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+}
+.table .actions .edit,
+.table .actions .delete {
+  padding: 0.5rem;
+  border-radius: 8px;
+}
+.table .actions .edit:hover {
+  background-color: rgba(0, 97, 254, 0.2);
+}
+.table .actions .delete:hover {
+  background-color: #ffdddd;
+}
+.table .table-empty {
+  text-align: center;
+  padding: 2rem;
 }
 
 .students-list {

@@ -59,7 +59,8 @@ $spacing-xs: 0.25rem;
 $spacing-sm: 0.5rem;
 $spacing-md: 1rem;
 $spacing-lg: 2rem;
-$spacing-container: 4rem;
+$spacing-container-lg: 4rem;
+$spacing-container: 2rem;
 
 //Border radius
 $border-radius-sm: 4px;
@@ -374,6 +375,36 @@ h1 {
         background-color: $background-primary-light;
       }
     }
+
+    span .course {
+      padding: 20px !important;
+      height: 100px;
+    }
+  }
+
+  .actions {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: $spacing-md;
+
+    .edit,
+    .delete {
+      padding: $spacing-sm;
+      border-radius: $border-radius-md;
+    }
+
+    .edit:hover {
+      background-color: rgba($color-primary, 0.2);
+    }
+    .delete:hover {
+      background-color: $background-error;
+    }
+  }
+
+  .table-empty {
+    text-align: center;
+    padding: $spacing-container;
   }
 }
 

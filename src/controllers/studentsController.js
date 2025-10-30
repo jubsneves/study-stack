@@ -1,14 +1,21 @@
 const Student = require("../models/StudentModel");
 
-exports.index = (req, res) => {
-  const formData = req.session.formData || {};
-  delete req.session.formData;
+exports.index = async (req, res) => {
+  try {
+    const formData = req.session.formData || {};
+    delete req.session.formData;
 
-  res.render("students", {
-    student: formData,
-    csrfToken: req.csrfToken(),
-    messages: req.flash(),
-  });
+    const students = await Student.findStudents();
+
+    res.render("students", {
+      student: formData,
+      csrfToken: req.csrfToken(),
+      messages: req.flash(),
+    });
+  } catch (e) {
+    console.log(e);
+    res.render("404");
+  }
 };
 
 exports.addstudent = async (req, res) => {
@@ -23,9 +30,7 @@ exports.addstudent = async (req, res) => {
     }
 
     req.flash("success", "Student has been added successfully!");
-    req.session.save(() =>
-      res.redirect(`/student/index/${student.students._id}`)
-    );
+    req.session.save(() => res.redirect("/"));
     return;
   } catch (e) {
     console.log(e);
@@ -56,12 +61,20 @@ exports.edit = async function (req, res) {
     }
 
     req.flash("success", "Student has been edit successfully!");
-    req.session.save(() =>
-      res.redirect(`/student/index/${student.students._id}`)
-    );
+    req.session.save(() => res.redirect("/"));
     return;
   } catch (e) {
     console.log(e);
     res.render("404");
   }
+};
+
+exports.delete = async function (req, res) {
+  if (!req.params.id) return res.render("404");
+
+  const student = await Student.delete(req.params.id);
+  if (!student) return res.render("404");
+
+  req.flash("success", "Student has been delete successfully");
+  req.session.save(() => res.redirect("/"));
 };

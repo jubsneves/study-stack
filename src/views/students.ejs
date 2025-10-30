@@ -3,51 +3,48 @@
 
         <section class="container students-list">
             <div class="header-content">
-                <h1>Add Student</h1>
+                <h1>
+                    <%= student._id ? 'Edit Student' : 'Add Student' %>
+                </h1>
             </div>
-            <% if(student._id) { %>
-                <form action="/student/edit/<%= student._id %>" method="POST" class="form">
-                    <% } else { %>
-                        <form action="/addstudent" method="POST" class="form">
-                            <% } %>
-                                <input type="hidden" name="_csrf" value=<%=csrfToken %>>
-                                <div class="form-group">
-                                    <label for="name" class="label">Full Name</label>
-                                    <input type="text" name="name" value="<%= student.name || '' %>"
-                                        class="form-control" placeholder="John Lennon">
-                                </div>
-                                <div class="form-group">
-                                    <label for="email" class="label">Email</label>
-                                    <input type="email" name="email" value="<%= student.email || '' %>"
-                                        class="form-control">
-                                </div>
-                                <div class="form-group">
-                                    <label for="phone" class="label">Phone</label>
-                                    <input type="text" name="phone" value="<%= student.phone || '' %>"
-                                        class="form-control" placeholder="+00 000000000">
-                                </div>
-                                <div class="form-group">
-                                    <label for="name" class="label">Course</label>
-                                    <select name="course" id="course">
-                                        <option value="">Select option</option>
-                                        <option value="design" <%=student.course==='design' ? 'selected' : '' %>>UX/UI
-                                            Design</option>
-                                        <option value="webdevelopment" <%=student.course==='webdevelopment' ? 'selected'
-                                            : '' %>>Web
-                                            Development</option>
-                                        <option value="data" <%=student.course==='data' ? 'selected' : '' %>>Data
-                                            Analyses
-                                        </option>
-                                        <option value="security" <%=student.course==='security' ? 'selected' : '' %>
-                                            >Cyber
-                                            Security
-                                        </option>
-                                    </select>
-                                </div>
-                                <%- include('includes/messages')%>
-                                    <button type="submit" class="btn-filled">Save</a>
-                        </form>
 
+            <form action="<%= student._id ? `/student/edit/${student._id}` : '/addstudent' %>" method="POST"
+                class="form">
+                <input type="hidden" name="_csrf" value="<%= csrfToken %>">
+
+                <div class="form-group">
+                    <label for="name" class="label">Full Name</label>
+                    <input type="text" name="name" value="<%= student.name || '' %>" class="form-control"
+                        placeholder="John Lennon">
+                </div>
+
+                <div class="form-group">
+                    <label for="email" class="label">Email</label>
+                    <input type="email" name="email" value="<%= student.email || '' %>" class="form-control">
+                </div>
+
+                <div class="form-group">
+                    <label for="phone" class="label">Phone</label>
+                    <input type="text" name="phone" value="<%= student.phone || '' %>" class="form-control"
+                        placeholder="+00 000000000">
+                </div>
+
+                <div class="form-group">
+                    <label for="course" class="label">Course</label>
+                    <select name="course" id="courses" class="form-control">
+                        <option value="">Select option</option>
+                        <option value="design" <%=student.course==='design' ? 'selected' : '' %>>UX/UI Design</option>
+                        <option value="webdevelopment" <%=student.course==='webdevelopment' ? 'selected' : '' %>>Web
+                            Development</option>
+                        <option value="data" <%=student.course==='data' ? 'selected' : '' %>>Data Analyses</option>
+                        <option value="security" <%=student.course==='security' ? 'selected' : '' %>>Cyber Security
+                        </option>
+                    </select>
+                </div>
+
+                <%- include('includes/messages') %>
+                    <button type="submit" class="btn-filled">Save</button>
+            </form>
         </section>
 
         <%- include('includes/footer') %>

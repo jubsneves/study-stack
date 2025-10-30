@@ -19,12 +19,6 @@ class Student {
   }
 }
 
-Student.findId = async function (id) {
-  if (typeof id !== "string") return;
-  const user = await StudentModel.findById(id);
-  return user;
-};
-
 Student.prototype.add = async function () {
   this.validate();
 
@@ -35,9 +29,9 @@ Student.prototype.add = async function () {
 Student.prototype.validate = function () {
   this.cleanUp();
 
+  if (!this.body.name) this.errors.push("Name is required");
   if (this.body.email && !validator.isEmail(this.body.email))
     this.errors.push("Please enter a valid email address");
-  if (!this.body.name) this.errors.push("Name is required");
   if (!this.body.phone) this.errors.push("Phone is required");
   if (!this.body.course) this.errors.push("Course is required");
 };
@@ -51,8 +45,8 @@ Student.prototype.cleanUp = function () {
 
   this.body = {
     name: this.body.name,
-    phone: this.body.phone,
     email: this.body.email,
+    phone: this.body.phone,
     course: this.body.course,
   };
 };
@@ -61,7 +55,26 @@ Student.prototype.edit = async function (id) {
   if (typeof id !== "string") return;
   this.validate();
   if (this.errors.length > 0) return;
-  this.students = await StudentModel.findByIdAndUpdate(id, this.body, { new: true });
+  this.students = await StudentModel.findByIdAndUpdate(id, this.body, {
+    new: true,
+  });
+};
+
+Student.findId = async function (id) {
+  if (typeof id !== "string") return;
+  const student = await StudentModel.findById(id);
+  return student;
+};
+
+Student.findStudents = async function () {
+  const students = await StudentModel.find().sort({ admission: -1 });
+  return students;
+};
+
+Student.delete = async function (id) {
+  if (typeof id !== "string") return;
+  const student = await StudentModel.findByIdAndDelete(id);
+  return student;
 };
 
 module.exports = Student;
