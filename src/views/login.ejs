@@ -11,17 +11,19 @@
                     </svg>
                     <h1>LOG IN</h1>
                     <p class="description">Enter your credentials to access your account</p>
-                    <form action="/login" method="POST" class="form">
+                    <form action="/login" method="POST" class="form login-form">
                         <input type="hidden" name="_csrf" value=<%=csrfToken %>>
                         <div class="form-group">
                             <label for="email" class="label">Email</label>
                             <input type="email" name="email" class="form-control" placeholder="Enter your email">
+                            <!-- <div class="help-text"></div> -->
                         </div>
                         <div class="form-group">
                             <label for="password" class="label">Password</label>
                             <input type="password" name="password" class="form-control">
+                            <!-- <div class="help-text"></div> -->
                         </div>
-                        <%- include('includes/messages')%>
+                        <!-- <%- include('includes/messages')%> -->
                             <button type="submit" class="btn-filled">Log in</button>
                     </form>
                     <div class="form-footer">
@@ -31,7 +33,7 @@
                 </div>
             </div>
 
-            <script src="/assets/js/bundle.js"></script>
+            <script type="module" src="/assets/js/bundle.js"></script>
             </body>
 
             </html>

@@ -111,6 +111,14 @@ h1 {
   background-size: cover;
   background-position: center;
 
+  .help-text {
+    font-size: $small;
+    color: $color-error;
+    background-color: $background-error;
+    padding: $spacing-sm $spacing-md;
+    border-radius: 0 0 $border-radius-sm $border-radius-sm;
+  }
+
   .glass-effect {
     display: flex;
     flex-direction: column;
@@ -207,6 +215,11 @@ h1 {
     &:hover {
       border: 1px solid $color-primary;
     }
+  }
+
+  input.error {
+    border-color: $color-error;
+    background-color: rgba($background-error, 0.2);
   }
 }
 

@@ -34,7 +34,7 @@ app.use(
     },
   })
 );
-//urlencoded: Handle form data submitted by users
+// urlencoded: Handle form data submitted by users
 app.use(express.urlencoded({ extended: true }));
 //express.json: Handle data sent in JSON format
 app.use(express.json());

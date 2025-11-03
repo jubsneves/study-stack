@@ -1,3 +1,4 @@
+//Adding background colour to courses
 const courseCells = document.querySelectorAll(".course");
 
 const colors = {
@@ -19,3 +20,14 @@ courseCells.forEach((cell) => {
     cell.style.padding = "4px 8px";
   }
 });
+
+//Setting 10s for messages
+setTimeout(() => {
+  const alerts = document.querySelectorAll(".alert");
+
+  alerts.forEach((alert) => {
+    alert.style.transition = "opacity 0.5s ease";
+    alert.style.opacity = "0";
+    setTimeout(() => alert.remove(), 500);
+  });
+}, 5000);

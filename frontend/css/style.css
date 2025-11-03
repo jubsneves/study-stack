@@ -32,6 +32,14 @@ h1 {
   background-size: cover;
   background-position: center;
 }
+.login .help-text,
+.register .help-text {
+  font-size: 0.875rem;
+  color: #6f0000;
+  background-color: #ffdddd;
+  padding: 0.5rem 1rem;
+  border-radius: 0 0 4px 4px;
+}
 .login .glass-effect,
 .register .glass-effect {
   display: flex;
@@ -126,6 +134,10 @@ h1 {
 .form input:hover,
 .form select:hover {
   border: 1px solid #0061fe;
+}
+.form input.error {
+  border-color: #6f0000;
+  background-color: rgba(255, 221, 221, 0.2);
 }
 
 .navbar {
